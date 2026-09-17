@@ -281,7 +281,8 @@ aside{
     
 }
 .form input{
-    height: 30px;
+    height: 50px;
+    border-radius: 10px;
 }
 textarea {
     height: 100px;
