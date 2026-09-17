@@ -104,8 +104,12 @@ async function makeAccount(){
 
         
         console.log(user);
+        const userId = userCredential.user;
+        localStorage.setItem("userId", userId.uid)
+        localStorage.setItem("name", name);
         console.log("Account created successfully!");
         error.textContent = "Yeepy! Your account is made successfuly. Wait while we redirect you...";
+        window.location.href="getstarted.html";
 
         
 
@@ -118,3 +122,69 @@ async function makeAccount(){
         
     }
 };
+
+
+//Login
+
+
+import {
+    getAuth,
+    signInWithEmailAndPassword
+} from
+"https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+
+
+const loginBtn = document.getElementById("loginBtn");
+
+loginBtn.addEventListener("click", async () => {
+    loader.style.display = "block";
+    createAccount.style.display = "none";
+    continueWithGoogle.style.display = "none";
+    error.textContent = "We've got your details, wait while we log you in...";
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    if (email === "") {
+        error.textContent = "Please enter your email.";
+        return;
+    }
+
+    if (password === "") {
+        error.textContent = "Please enter your password.";
+        return;
+    }
+
+    try {
+
+        const userCredential =
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+        const user = userCredential.user;
+
+        console.log("Logged in:", user);
+        const userId = userCredential.user;
+        localStorage.setItem("userId", userId.uid)
+        error.textContent = "Yebo! Login successful! Wait while we redirect you.";
+        window.location.href = "dashboard.html";
+
+    } catch (error) {
+
+        console.log(error.code);
+
+        if (error.code === "auth/invalid-credential") {
+            error.textContent = "Incorrect email or password.";
+        }
+        else if (error.code === "auth/invalid-email") {
+            error.textContent = "Please enter a valid email.";
+        }
+        else {
+           error.textContent = "Login failed: " + error.message;
+        }
+    }
+});

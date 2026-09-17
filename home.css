@@ -325,6 +325,30 @@ textarea {
     display: none;
 }
 
+
+/* Finish setting up account */
+
+.profilePic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    
+}
+select{
+    height: 30px;
+    cursor: pointer;
+}
+#changeProfile{
+    background: #35E887;
+    border-radius: 7px;
+    padding: 8px;
+    font-weight: bold;
+    
+    
+}
+
+
 /* Media queries */
 
  @media(max-width: 670px){
