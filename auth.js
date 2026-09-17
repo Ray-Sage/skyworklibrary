@@ -136,8 +136,8 @@ loginBtn.addEventListener("click", async () => {
     
     error.textContent = "We've got your details, wait while we log you in...";
 
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value;
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
     if (email === "") {
         error.textContent = "Please enter your email.";
