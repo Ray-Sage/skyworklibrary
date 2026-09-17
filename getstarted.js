@@ -6,7 +6,7 @@ const imageInput = document.getElementById("imageIn");
 const preview = document.querySelector('.profilePic');
 const userName = document.querySelector('.userin');
 
-
+alert(name);
 userName.textContent = name + "!";
 
 
