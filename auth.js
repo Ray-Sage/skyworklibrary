@@ -62,7 +62,8 @@ import { initializeApp } from
 
 import {
     getAuth,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
 } from
 "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
@@ -125,14 +126,6 @@ async function makeAccount(){
 
 
 //Login
-
-
-import {
-    getAuth,
-    signInWithEmailAndPassword
-} from
-"https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-
 
 
 const loginBtn = document.getElementById("loginBtn");
