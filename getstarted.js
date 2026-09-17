@@ -1,11 +1,10 @@
 // Finish account
 
-const userin = document.querySelector("userin");
 const name = localStorage.getItem("name");
 const email = localStorage.getItem("email");
 const imageInput = document.getElementById("imageIn");
 const preview = document.querySelector('.profilePic');
-const userName = document.getElementById('userName');
+const userName = document.querySelector('.userin');
 
 
 userName.textContent = name + "!";
