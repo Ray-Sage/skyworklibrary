@@ -101,11 +101,11 @@ async function makeAccount(){
                 password
             );
 
-        const user = userCredential.user;
+        const userId = userCredential.user;
 
         
-        console.log(user);
-        const userId = userCredential.user;
+        console.log(userId);
+        
         localStorage.setItem("userId", userId.uid)
         localStorage.setItem("name", name);
         console.log("Account created successfully!");
@@ -132,8 +132,8 @@ const loginBtn = document.getElementById("loginBtn");
 
 loginBtn.addEventListener("click", async () => {
     loader.style.display = "block";
-    createAccount.style.display = "none";
-    continueWithGoogle.style.display = "none";
+    loginBtn.style.display = "none";
+    
     error.textContent = "We've got your details, wait while we log you in...";
 
     const email = document.getElementById("loginEmail").value.trim();
@@ -158,10 +158,10 @@ loginBtn.addEventListener("click", async () => {
                 password
             );
 
-        const user = userCredential.user;
-
-        console.log("Logged in:", user);
         const userId = userCredential.user;
+
+        console.log("Logged in:", userId);
+        
         localStorage.setItem("userId", userId.uid)
         error.textContent = "Yebo! Login successful! Wait while we redirect you.";
         window.location.href = "dashboard.html";
