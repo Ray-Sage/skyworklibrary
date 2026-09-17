@@ -271,6 +271,9 @@ aside{
 
 
 /* Contacts */
+.form{
+    width: 100%;
+}
 
 #form {
     display: flex;
