@@ -101,12 +101,12 @@ async function makeAccount(){
                 password
             );
 
-        const userId = userCredential.user;
+        const user = userCredential.user;
 
         
-        console.log(userId);
+        console.log(user);
         
-        localStorage.setItem("userId", userId.uid)
+        localStorage.setItem("userId", user.uid)
         localStorage.setItem("name", name);
         console.log("Account created successfully!");
         error.textContent = "Yeepy! Your account is made successfuly. Wait while we redirect you...";
@@ -158,11 +158,11 @@ loginBtn.addEventListener("click", async () => {
                 password
             );
 
-        const userId = userCredential.user;
+        const user = userCredential.user;
 
-        console.log("Logged in:", userId);
+        console.log("Logged in:", user);
         
-        localStorage.setItem("userId", userId.uid)
+        localStorage.setItem("userId", user.uid)
         error.textContent = "Yebo! Login successful! Wait while we redirect you.";
         window.location.href = "dashboard.html";
 
