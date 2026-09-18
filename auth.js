@@ -43,7 +43,7 @@ const confirm = document.getElementById("confirm").value;
     
     if (password !== confirm){
         error.textContent = "Ohh, you missed something. Your passwords mismatch. Kindly check your passwords and try again";
-        
+        return;
     }
     error.textContent = "We are cooking up your account now. Please wait...";
     
@@ -107,7 +107,6 @@ async function makeAccount(){
         console.log(user);
         
         localStorage.setItem("userId", user.uid)
-        localStorage.setItem("name", name);
         console.log("Account created successfully!");
         error.textContent = "Yeepy! Your account is made successfuly. Wait while we redirect you...";
         window.location.href="getstarted.html";
@@ -131,10 +130,7 @@ async function makeAccount(){
 const loginBtn = document.getElementById("loginBtn");
 
 loginBtn.addEventListener("click", async () => {
-    loader.style.display = "block";
-    loginBtn.style.display = "none";
-    
-    error.textContent = "We've got your details, wait while we log you in...";
+   
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
@@ -148,6 +144,10 @@ loginBtn.addEventListener("click", async () => {
         error.textContent = "Please enter your password.";
         return;
     }
+    loader.style.display = "block";
+    loginBtn.style.display = "none";
+    
+    error.textContent = "We've got your details, wait while we log you in...";
 
     try {
 
