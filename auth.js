@@ -173,11 +173,11 @@ loginBtn.addEventListener("click", async () => {
         window.location.href = "dashboard.html";
 
     } catch (error) {
-
+         error.textContent = "Something went wrong. Kindly check your details and try again.";
          loader.style.display = "none";
          loginBtn.style.display = "block";
     
-    error.textContent = "Something went wrong. Kindly check your details and try again.";
+  
         console.log(error.code);
 
         if (error.code === "auth/invalid-credential") {
