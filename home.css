@@ -286,10 +286,11 @@ aside{
     
 }
 .form input{
-    height: 50px;
+    height: 40px;
     border-radius: 10px;
     width: 70vw;
     margin: auto;
+    border: 1px solid black;
 }
 textarea {
     height: 100px;
