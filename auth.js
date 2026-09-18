@@ -115,10 +115,16 @@ async function makeAccount(){
 
     } catch (error) {
 
+    error.textContent = "Oops, something went wrong. Kindly Check your details and try again.";
+    
+    loader.style.display = "none";
+    createAccount.style.display = "block";
+    continueWithGoogle.style.display = "block";
+
         console.log(error.code);
         console.log(error.message);
         
-        error.textContent = error.message;
+         error.textContent = error.code;
         
     }
 };
@@ -168,6 +174,10 @@ loginBtn.addEventListener("click", async () => {
 
     } catch (error) {
 
+         loader.style.display = "none";
+         loginBtn.style.display = "block";
+    
+    error.textContent = "Something went wrong. Kindly check your details and try again.";
         console.log(error.code);
 
         if (error.code === "auth/invalid-credential") {
