@@ -114,7 +114,7 @@ async function makeAccount(){
         
 
     } catch (error) {
-
+    error.textContent = "";
     error.textContent = "Oops, something went wrong. Kindly Check your details and try again.";
     
     loader.style.display = "none";
